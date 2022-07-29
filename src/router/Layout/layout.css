@@ -1,0 +1,57 @@
+.header {
+  border-bottom: 1px solid #E68134;
+  height: 56px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 36px;
+}
+
+.user {
+  display: flex;
+  justify-content: flex-end;
+}
+.user .email {
+  color: #E68134;
+}
+.user .logout {
+  cursor: pointer;
+  margin-left: 24px;
+}
+.logo {
+  height: 38px;
+}
+.layout {
+  padding: 0 36px;
+}
+
+button {
+  border: none;
+  outline: none !important;
+  background-color: #E68134;
+  color: #fff;
+  white-space: nowrap;
+  text-decoration: none;
+  transition: .2s background-color, .2s color;
+  cursor: pointer;
+  padding: 5px 20px;
+  box-sizing: border-box;
+  border-radius: 18px;
+  min-height: 36px;
+}
+button:hover {
+  background-color: #D45F07;
+}
+
+input {
+  display: block;
+  box-sizing: border-box;
+  height: 36px;
+  border-radius: 18px;
+  padding: 5px 10px 5px 20px;
+  border: 1px solid #cfcfcf;
+  outline: none !important;
+}
+input:focus {
+  border-color: #E68134;
+}

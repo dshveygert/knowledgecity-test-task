@@ -1,0 +1,57 @@
+.login-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+}
+.login {
+  max-width: 375px;
+  margin: 0 auto;
+
+}
+.login .logo {
+  width: 100%;
+  height: auto;
+}
+.login-form {
+  display: flex;
+  flex-direction: column;
+}
+.login-form label {
+  display: block;
+}
+.login-form button {
+  display: block;
+}
+.login-form input {
+  width: 100%;
+  margin-bottom: 16px;
+}
+.login-form label {
+  position: relative;
+}
+.login-form .username::before {
+  content: '';
+  display: block;
+  position: absolute;
+  background: url("../../assets/user.svg") center center no-repeat;
+  background-size: contain;
+  width: 20px;
+  height: 20px;
+  top: 8px;
+  left: 10px
+}
+.login-form .password::before {
+  content: '';
+  display: block;
+  position: absolute;
+  background: url("../../assets/password.svg") center center no-repeat;
+  background-size: contain;
+  width: 20px;
+  height: 20px;
+  top: 8px;
+  left: 10px
+}
+.login-form input {
+  padding-left: 36px;
+}

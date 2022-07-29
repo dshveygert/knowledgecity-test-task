@@ -1,0 +1,14 @@
+.pages {
+  display: flex;
+  justify-content: center;
+}
+.pages .page {
+  padding: 3px;
+  margin: 0 3px;
+}
+.pages .page__current {
+  border-bottom: 2px solid #E68134;
+}
+.pages .page__prev, .pages .page__next {
+  cursor: pointer;
+}
