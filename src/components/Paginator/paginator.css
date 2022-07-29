@@ -7,8 +7,9 @@
   margin: 0 3px;
 }
 .pages .page__current {
-  border-bottom: 2px solid #E68134;
+  border-bottom: 2px solid #e68134;
 }
-.pages .page__prev, .pages .page__next {
+.pages .page__prev,
+.pages .page__next {
   cursor: pointer;
 }

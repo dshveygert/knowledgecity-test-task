@@ -7,7 +7,6 @@
 .login {
   max-width: 375px;
   margin: 0 auto;
-
 }
 .login .logo {
   width: 100%;
@@ -34,23 +33,23 @@
   content: '';
   display: block;
   position: absolute;
-  background: url("../../assets/user.svg") center center no-repeat;
+  background: url('../../assets/user.svg') center center no-repeat;
   background-size: contain;
   width: 20px;
   height: 20px;
   top: 8px;
-  left: 10px
+  left: 10px;
 }
 .login-form .password::before {
   content: '';
   display: block;
   position: absolute;
-  background: url("../../assets/password.svg") center center no-repeat;
+  background: url('../../assets/password.svg') center center no-repeat;
   background-size: contain;
   width: 20px;
   height: 20px;
   top: 8px;
-  left: 10px
+  left: 10px;
 }
 .login-form input {
   padding-left: 36px;

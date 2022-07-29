@@ -1,5 +1,5 @@
 .header {
-  border-bottom: 1px solid #E68134;
+  border-bottom: 1px solid #e68134;
   height: 56px;
   display: flex;
   align-items: center;
@@ -12,7 +12,7 @@
   justify-content: flex-end;
 }
 .user .email {
-  color: #E68134;
+  color: #e68134;
 }
 .user .logout {
   cursor: pointer;
@@ -28,11 +28,11 @@
 button {
   border: none;
   outline: none !important;
-  background-color: #E68134;
+  background-color: #e68134;
   color: #fff;
   white-space: nowrap;
   text-decoration: none;
-  transition: .2s background-color, .2s color;
+  transition: 0.2s background-color, 0.2s color;
   cursor: pointer;
   padding: 5px 20px;
   box-sizing: border-box;
@@ -40,7 +40,7 @@ button {
   min-height: 36px;
 }
 button:hover {
-  background-color: #D45F07;
+  background-color: #d45f07;
 }
 
 input {
@@ -53,5 +53,5 @@ input {
   outline: none !important;
 }
 input:focus {
-  border-color: #E68134;
+  border-color: #e68134;
 }
