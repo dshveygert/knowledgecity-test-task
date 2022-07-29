@@ -8,7 +8,6 @@ export const httpRequest = axios.create({
 });
 
 export function setAuthorizationToken(token: string | undefined) {
-  console.log('setAuthorizationToken', token);
   if (token) {
     httpRequest.defaults.headers.common['Authorization'] = token;
   } else {

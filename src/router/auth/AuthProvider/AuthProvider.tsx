@@ -17,9 +17,9 @@ export function useAuth() {
 }
 
 export default function AuthProvider({ children }: { children: ReactNode }) {
-  let [user, setUser] = useState<User | null>(null);
+  const [user, setUser] = useState<User | null>(null);
 
-  let signIn = async (user: AuthUser, callback: VoidFunction) => {
+  const signIn = async (user: AuthUser, callback: VoidFunction) => {
     const auth = await authorisation.signIn(user);
     setAuthorizationToken(auth?.token);
     return userInfo().then((response) => {
@@ -28,17 +28,16 @@ export default function AuthProvider({ children }: { children: ReactNode }) {
     });
   };
 
-  let signOut = (callback: VoidFunction) => {
+  const signOut = (callback: VoidFunction) => {
     return authorisation.signOut(() => {
       setUser(null);
       callback();
     });
   };
 
-  let value = { user, signIn, signOut };
+  const value = { user, signIn, signOut };
 
   useEffect(() => {
-    console.log('useEffect 1');
     if (isAuthenticated() && !user?.id) {
       setAuthorizationToken(authToken());
       userInfo().then((response) => {

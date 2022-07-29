@@ -6,16 +6,16 @@ import logo from '../../assets/logo.svg';
 import './loginPage.css';
 
 export default function LoginPage() {
-  let navigate = useNavigate();
-  let location = useLocation();
-  let auth = useAuth();
+  const navigate = useNavigate();
+  const location = useLocation();
+  const auth = useAuth();
 
-  // @ts-ignore
-  let from = location.state?.from?.pathname ?? '/';
+  const locState =  location.state as {from: {pathname: string}};
+  const from = locState?.from?.pathname ?? '/';
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    let formData = new FormData(event.currentTarget);
-    let user: AuthUser = {
+    const formData = new FormData(event.currentTarget);
+    const user: AuthUser = {
       email: formData.get('username') as string,
       password: formData.get('password') as string,
     };
