@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState, ChangeEvent, useEffect} from 'react';
 import { Navigate, useLocation, useNavigate } from 'react-router-dom';
 import { useAuth } from '../../router/auth/AuthProvider/AuthProvider';
 import { AuthUser } from '../../models';
@@ -9,14 +9,16 @@ export default function LoginPage() {
   const navigate = useNavigate();
   const location = useLocation();
   const auth = useAuth();
-
   const locState =  location.state as {from: {pathname: string}};
   const from = locState?.from?.pathname ?? '/';
-  const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
+  const [formValues, setFormValues] = useState<AuthUser>({email: '', password: ''});
+  const [disabled, setDisabled] = useState(true);
+
+  const handleSubmit = (event: ChangeEvent<HTMLFormElement>) => {
     event.preventDefault();
     const formData = new FormData(event.currentTarget);
     const user: AuthUser = {
-      email: formData.get('username') as string,
+      email: formData.get('email') as string,
       password: formData.get('password') as string,
     };
     auth.signIn(user, () => {
@@ -24,9 +26,17 @@ export default function LoginPage() {
     });
   };
 
+  const handleChange = (e: ChangeEvent<HTMLInputElement>, field: string): void => {
+    setFormValues({...formValues, [field]: e.target?.value});
+  }
+
   if (auth.user) {
     return <Navigate to='/' state={{ from: location }} replace />;
   }
+
+  useEffect(() => {
+    setDisabled(formValues['email']?.length < 5 || formValues['password']?.length < 3);
+  }, [formValues])
 
   return (
     <div className='login-wrapper'>
@@ -38,12 +48,12 @@ export default function LoginPage() {
 
         <form onSubmit={handleSubmit} className='login-form'>
           <label className='username'>
-            <input name='username' type='text' placeholder='Username' />
+            <input name='email' type='text' placeholder='Username' onChange={(event) => handleChange(event, 'email')} />
           </label>
           <label className='password'>
-            <input name='password' type='password' placeholder='Password' />
+            <input name='password' type='password' placeholder='Password' onChange={(event) => handleChange(event, 'password')} />
           </label>
-          <button type='submit'>Login</button>
+          <button type='submit' disabled={disabled}>Login</button>
         </form>
       </div>
     </div>

@@ -42,6 +42,13 @@ button {
 button:hover {
   background-color: #d45f07;
 }
+button:disabled {
+  opacity: 0.6;
+}
+button:hover:disabled {
+  background-color: #e68134;
+  cursor: auto;
+}
 
 input {
   display: block;
@@ -54,4 +61,18 @@ input {
 }
 input:focus {
   border-color: #e68134;
+}
+
+@media (max-width: 480px) {
+  .layout, .header {
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+  .header {
+
+  }
+  .header .user {
+    flex-direction: column;
+    text-align: right;
+  }
 }

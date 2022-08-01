@@ -6,6 +6,13 @@ Deployed on [http://api.shveygert.de:34207](http://api.shveygert.de:34207/)
 
 API replaced by mocks (/src/api/mocks.ts). Comment line 19 in /src/api/httpRequest.ts to disable mocks.
 
+### ToDo
+
+- Form to edit user in modal window
+- Functionality for creating a new user
+- Interceptor for catching 403 errors
+- Login form validation
+
 ### Available Scripts
 
 In the project directory, you can run:
