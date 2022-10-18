@@ -2,7 +2,6 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-Deployed on [http://api.shveygert.de:34207](http://api.shveygert.de:34207/)
 
 API replaced by mocks (/src/api/mocks.ts). Comment line 19 in /src/api/httpRequest.ts to disable mocks.
 
